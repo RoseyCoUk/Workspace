@@ -15,6 +15,7 @@ import TeamChat from './pages/admin/TeamChat';
 import Reports from './pages/admin/Reports';
 import SharedNotes from './pages/admin/SharedNotes';
 import Calendar from './pages/admin/Calendar';
+import Documents from './pages/admin/Documents';
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
             <Route path="clients" element={<Clients />} />
             <Route path="projects" element={<div>Projects</div>} />
             <Route path="calendar" element={<Calendar />} />
-            <Route path="documents" element={<div>Documents</div>} />
+            <Route path="documents" element={<Documents />} />
             <Route path="reports" element={<Reports />} />
             <Route path="chat" element={<TeamChat />} />
             <Route path="all-clients" element={<AllClients />} />
@@ -67,4 +68,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
