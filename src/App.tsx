@@ -7,6 +7,7 @@ import ClientDashboard from './pages/client/Dashboard';
 import AdminDashboard from './pages/admin/Dashboard';
 import PasswordVault from './pages/admin/PasswordVault';
 import InternalDocs from './pages/admin/InternalDocs';
+import Tools from './pages/admin/Tools';
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
             <Route path="all-tasks" element={<div>All Tasks</div>} />
             <Route path="shared-notes" element={<div>Shared Notes & Ideas</div>} />
             <Route path="internal-docs" element={<InternalDocs />} />
-            <Route path="tools" element={<div>Tools & Links</div>} />
+            <Route path="tools" element={<Tools />} />
             <Route path="sops" element={<div>SOPs / Training</div>} />
             <Route path="vault" element={<PasswordVault />} />
           </Route>
