@@ -9,6 +9,7 @@ import PasswordVault from './pages/admin/PasswordVault';
 import InternalDocs from './pages/admin/InternalDocs';
 import Tools from './pages/admin/Tools';
 import SOPs from './pages/admin/SOPs';
+import Clients from './pages/admin/Clients';
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
           <Route path="/admin" element={<MainLayout />}>
             <Route index element={<Navigate to="/admin/dashboard" replace />} />
             <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="clients" element={<div>Clients</div>} />
+            <Route path="clients" element={<Clients />} />
             <Route path="projects" element={<div>Projects</div>} />
             <Route path="calendar" element={<div>Calendar</div>} />
             <Route path="documents" element={<div>Documents</div>} />
