@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card, { CardContent, CardHeader } from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import Badge from '../../components/ui/Badge';
-import { Eye, EyeOff, Plus, Search, Copy, Key, Globe, Lock, Trash2 } from 'lucide-react';
+import { Eye, EyeOff, Plus, Search, Copy, Key, Globe, Lock, Trash2, X } from 'lucide-react';
 
 interface PasswordEntry {
   id: string;
@@ -14,9 +14,25 @@ interface PasswordEntry {
   lastUpdated: string;
 }
 
+interface NewCredential {
+  name: string;
+  username: string;
+  password: string;
+  url: string;
+  category: string;
+}
+
 const PasswordVault: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showPassword, setShowPassword] = useState<Record<string, boolean>>({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newCredential, setNewCredential] = useState<NewCredential>({
+    name: '',
+    username: '',
+    password: '',
+    url: '',
+    category: 'Development'
+  });
   
   // Mock data - in production this would come from a secure backend
   const passwords: PasswordEntry[] = [
@@ -61,6 +77,28 @@ const PasswordVault: React.FC = () => {
     // You could add a toast notification here
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setNewCredential(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the data to your backend
+    console.log('New credential:', newCredential);
+    setIsModalOpen(false);
+    setNewCredential({
+      name: '',
+      username: '',
+      password: '',
+      url: '',
+      category: 'Development'
+    });
+  };
+
   const filteredPasswords = passwords.filter(entry =>
     entry.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     entry.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -74,10 +112,120 @@ const PasswordVault: React.FC = () => {
           <h1 className="text-2xl font-bold text-gray-900">Password Vault</h1>
           <p className="text-gray-500 mt-1">Securely store and manage team credentials</p>
         </div>
-        <Button variant="primary" icon={<Plus size={16} />}>
+        <Button variant="primary" icon={<Plus size={16} />} onClick={() => setIsModalOpen(true)}>
           Add New Credential
         </Button>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-md p-6">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold">Add New Credential</h2>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={newCredential.name}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
+                  Username
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  value={newCredential.username}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={newCredential.password}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="url" className="block text-sm font-medium text-gray-700 mb-1">
+                  URL (optional)
+                </label>
+                <input
+                  type="url"
+                  id="url"
+                  name="url"
+                  value={newCredential.url}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
+                  Category
+                </label>
+                <select
+                  id="category"
+                  name="category"
+                  value={newCredential.category}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                >
+                  <option value="Development">Development</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Design">Design</option>
+                  <option value="Sales">Sales</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              
+              <div className="flex justify-end space-x-3 mt-6">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setIsModalOpen(false)}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit" variant="primary">
+                  Save Credential
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       <Card>
         <CardHeader 
