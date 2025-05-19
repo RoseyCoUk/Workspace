@@ -8,6 +8,7 @@ import AdminDashboard from './pages/admin/Dashboard';
 import PasswordVault from './pages/admin/PasswordVault';
 import InternalDocs from './pages/admin/InternalDocs';
 import Tools from './pages/admin/Tools';
+import SOPs from './pages/admin/SOPs';
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
             <Route path="shared-notes" element={<div>Shared Notes & Ideas</div>} />
             <Route path="internal-docs" element={<InternalDocs />} />
             <Route path="tools" element={<Tools />} />
-            <Route path="sops" element={<div>SOPs / Training</div>} />
+            <Route path="sops" element={<SOPs />} />
             <Route path="vault" element={<PasswordVault />} />
           </Route>
           
