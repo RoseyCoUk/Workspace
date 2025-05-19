@@ -61,7 +61,7 @@ const Sidebar: React.FC = () => {
             </div>
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Radiance</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Rosey Co</h2>
           </div>
         </div>
       </div>
