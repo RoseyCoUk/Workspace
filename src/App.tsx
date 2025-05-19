@@ -12,6 +12,7 @@ import SOPs from './pages/admin/SOPs';
 import Clients from './pages/admin/Clients';
 import AllClients from './pages/admin/AllClients';
 import TeamChat from './pages/admin/TeamChat';
+import Reports from './pages/admin/Reports';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
             <Route path="projects" element={<div>Projects</div>} />
             <Route path="calendar" element={<div>Calendar</div>} />
             <Route path="documents" element={<div>Documents</div>} />
-            <Route path="reports" element={<div>Reports</div>} />
+            <Route path="reports" element={<Reports />} />
             <Route path="chat" element={<TeamChat />} />
             <Route path="all-clients" element={<AllClients />} />
             <Route path="all-projects" element={<div>All Projects</div>} />
@@ -63,5 +64,3 @@ function App() {
     </AuthProvider>
   );
 }
-
-export default App;
