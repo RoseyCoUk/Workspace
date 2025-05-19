@@ -14,6 +14,7 @@ import AllClients from './pages/admin/AllClients';
 import TeamChat from './pages/admin/TeamChat';
 import Reports from './pages/admin/Reports';
 import SharedNotes from './pages/admin/SharedNotes';
+import Calendar from './pages/admin/Calendar';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="clients" element={<Clients />} />
             <Route path="projects" element={<div>Projects</div>} />
-            <Route path="calendar" element={<div>Calendar</div>} />
+            <Route path="calendar" element={<Calendar />} />
             <Route path="documents" element={<div>Documents</div>} />
             <Route path="reports" element={<Reports />} />
             <Route path="chat" element={<TeamChat />} />
@@ -65,5 +66,3 @@ function App() {
     </AuthProvider>
   );
 }
-
-export default App;
