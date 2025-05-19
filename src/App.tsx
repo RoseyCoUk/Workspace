@@ -10,6 +10,7 @@ import InternalDocs from './pages/admin/InternalDocs';
 import Tools from './pages/admin/Tools';
 import SOPs from './pages/admin/SOPs';
 import Clients from './pages/admin/Clients';
+import AllClients from './pages/admin/AllClients';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
             <Route path="documents" element={<div>Documents</div>} />
             <Route path="reports" element={<div>Reports</div>} />
             <Route path="chat" element={<div>Team Chat</div>} />
-            <Route path="all-clients" element={<div>All Clients</div>} />
+            <Route path="all-clients" element={<AllClients />} />
             <Route path="all-projects" element={<div>All Projects</div>} />
             <Route path="all-tasks" element={<div>All Tasks</div>} />
             <Route path="shared-notes" element={<div>Shared Notes & Ideas</div>} />
