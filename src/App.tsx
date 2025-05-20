@@ -22,6 +22,7 @@ import MyTasks from './pages/admin/MyTasks';
 import BrandAssets from './pages/admin/BrandAssets';
 import Legal from './pages/admin/Legal';
 import Settings from './pages/admin/Settings';
+import MyAccount from './pages/admin/MyAccount';
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
             <Route path="brand-assets" element={<BrandAssets />} />
             <Route path="legal" element={<Legal />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="account" element={<MyAccount />} />
           </Route>
           
           {/* Fallback redirect */}
