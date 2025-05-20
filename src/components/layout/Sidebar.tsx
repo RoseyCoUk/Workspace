@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Users, FolderKanban, Calendar, FileText, BarChart, MessageSquare, ClipboardList, BookOpen, PenTool as Tool, KeyRound, Settings, LogOut, User, Bell, HelpCircle, FileBox, ScrollText, CheckSquare } from 'lucide-react';
+import { LayoutDashboard, Users, FolderKanban, Calendar, BarChart, MessageSquare, ClipboardList, BookOpen, PenTool as Tool, KeyRound, Settings, LogOut, User, Bell, HelpCircle, FileBox, ScrollText, CheckSquare } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 interface SidebarLinkProps {
@@ -99,12 +99,6 @@ const Sidebar: React.FC = () => {
                 icon={<Calendar size={18} />}
                 label="My Calendar"
                 active={location.pathname === '/admin/my-calendar'}
-              />
-              <SidebarLink
-                to="/admin/documents"
-                icon={<FileText size={18} />}
-                label="Documents"
-                active={location.pathname === '/admin/documents'}
               />
               <SidebarLink
                 to="/admin/reports"
@@ -206,12 +200,6 @@ const Sidebar: React.FC = () => {
                 icon={<FileBox size={18} />}
                 label="Deliverables"
                 active={location.pathname === '/deliverables'}
-              />
-              <SidebarLink
-                to="/documents"
-                icon={<FileText size={18} />}
-                label="Documents"
-                active={location.pathname === '/documents'}
               />
               <SidebarLink
                 to="/meetings"
