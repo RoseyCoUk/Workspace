@@ -79,7 +79,7 @@ const Sidebar: React.FC = () => {
               <SidebarLink
                 to="/admin/clients"
                 icon={<Users size={18} />}
-                label="Clients"
+                label="My Clients"
                 active={location.pathname === '/admin/clients'}
               />
               <SidebarLink

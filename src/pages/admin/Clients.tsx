@@ -17,7 +17,7 @@ interface Client {
   avatar?: string;
 }
 
-const Clients: React.FC = () => {
+const MyClients: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedStatus, setSelectedStatus] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -62,17 +62,6 @@ const Clients: React.FC = () => {
       status: 'Pending',
       projects: 1,
       joinedDate: '2024-03-10'
-    },
-    {
-      id: '4',
-      name: 'James Wilson',
-      company: 'Market Leaders Co',
-      email: 'j.wilson@marketleaders.com',
-      phone: '(555) 456-7890',
-      address: '321 Market St, Chicago, IL',
-      status: 'Inactive',
-      projects: 0,
-      joinedDate: '2023-11-20'
     }
   ];
 
@@ -123,8 +112,8 @@ const Clients: React.FC = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Clients</h1>
-          <p className="text-gray-500 mt-1">Manage your client relationships</p>
+          <h1 className="text-2xl font-bold text-gray-900">My Clients</h1>
+          <p className="text-gray-500 mt-1">Manage your assigned client relationships</p>
         </div>
         <Button variant="primary" icon={<Plus size={16} />} onClick={() => setIsModalOpen(true)}>
           Add New Client
@@ -240,7 +229,7 @@ const Clients: React.FC = () => {
 
       <Card>
         <CardHeader 
-          title="Client List" 
+          title="My Client List" 
           action={
             <div className="flex items-center gap-3">
               <div className="relative">
@@ -345,4 +334,4 @@ const Clients: React.FC = () => {
   );
 };
 
-export default Clients;
+export default MyClients;
