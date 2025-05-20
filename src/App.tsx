@@ -16,6 +16,7 @@ import Reports from './pages/admin/Reports';
 import SharedNotes from './pages/admin/SharedNotes';
 import Calendar from './pages/admin/Calendar';
 import Documents from './pages/admin/Documents';
+import AllProjects from './pages/admin/AllProjects';
 
 function App() {
   return (
@@ -51,7 +52,7 @@ function App() {
             <Route path="reports" element={<Reports />} />
             <Route path="chat" element={<TeamChat />} />
             <Route path="all-clients" element={<AllClients />} />
-            <Route path="all-projects" element={<div>All Projects</div>} />
+            <Route path="all-projects" element={<AllProjects />} />
             <Route path="all-tasks" element={<div>All Tasks</div>} />
             <Route path="shared-notes" element={<SharedNotes />} />
             <Route path="internal-docs" element={<InternalDocs />} />
