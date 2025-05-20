@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Users, FolderKanban, Calendar, BarChart, MessageSquare, ClipboardList, BookOpen, PenTool as Tool, KeyRound, Settings, LogOut, User, Bell, HelpCircle, FileBox, ScrollText, CheckSquare } from 'lucide-react';
+import { LayoutDashboard, Users, FolderKanban, Calendar, BarChart, MessageSquare, ClipboardList, BookOpen, PenTool as Tool, KeyRound, Settings, LogOut, User, Bell, HelpCircle, FileBox, ScrollText, CheckSquare, Image, Scale } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 interface SidebarLinkProps {
@@ -172,6 +172,43 @@ const Sidebar: React.FC = () => {
                 label="Password Vault"
                 active={location.pathname === '/admin/vault'}
               />
+              <SidebarLink
+                to="/admin/brand-assets"
+                icon={<Image size={18} />}
+                label="Brand Assets"
+                active={location.pathname === '/admin/brand-assets'}
+              />
+              <SidebarLink
+                to="/admin/legal"
+                icon={<Scale size={18} />}
+                label="Legal / Contracts"
+                active={location.pathname === '/admin/legal'}
+              />
+            </SidebarSection>
+
+            <SidebarSection title="SETTINGS">
+              <SidebarLink
+                to="/admin/settings"
+                icon={<Settings size={18} />}
+                label="Settings"
+                active={location.pathname === '/admin/settings'}
+              />
+            </SidebarSection>
+
+            <SidebarSection title="PROFILE">
+              <SidebarLink
+                to="/admin/account"
+                icon={<User size={18} />}
+                label="My Account"
+                active={location.pathname === '/admin/account'}
+              />
+              <button
+                onClick={logout}
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-md transition-colors text-gray-700 hover:bg-gray-50"
+              >
+                <span className="text-[20px]"><LogOut size={18} /></span>
+                <span className="flex-grow text-left">Logout</span>
+              </button>
             </SidebarSection>
           </>
         ) : (
@@ -256,13 +293,6 @@ const Sidebar: React.FC = () => {
             <p className="text-sm font-medium text-gray-900 truncate">{user?.name}</p>
             <p className="text-xs text-gray-500 truncate">{isAdmin ? 'Admin User' : 'Client'}</p>
           </div>
-          <button
-            onClick={logout}
-            className="text-gray-400 hover:text-gray-600"
-            title="Logout"
-          >
-            <LogOut size={18} />
-          </button>
         </div>
       </div>
     </div>
