@@ -95,10 +95,10 @@ const Sidebar: React.FC = () => {
                 active={location.pathname === '/admin/tasks'}
               />
               <SidebarLink
-                to="/admin/calendar"
+                to="/admin/my-calendar"
                 icon={<Calendar size={18} />}
-                label="Calendar"
-                active={location.pathname === '/admin/calendar'}
+                label="My Calendar"
+                active={location.pathname === '/admin/my-calendar'}
               />
               <SidebarLink
                 to="/admin/documents"
@@ -138,6 +138,12 @@ const Sidebar: React.FC = () => {
                 icon={<ClipboardList size={18} />}
                 label="All Tasks"
                 active={location.pathname === '/admin/all-tasks'}
+              />
+              <SidebarLink
+                to="/admin/calendar"
+                icon={<Calendar size={18} />}
+                label="Team Calendar"
+                active={location.pathname === '/admin/calendar'}
               />
               <SidebarLink
                 to="/admin/shared-notes"

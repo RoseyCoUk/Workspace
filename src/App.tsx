@@ -15,6 +15,7 @@ import TeamChat from './pages/admin/TeamChat';
 import Reports from './pages/admin/Reports';
 import SharedNotes from './pages/admin/SharedNotes';
 import Calendar from './pages/admin/Calendar';
+import MyCalendar from './pages/admin/MyCalendar';
 import Documents from './pages/admin/Documents';
 import AllProjects from './pages/admin/AllProjects';
 import MyProjects from './pages/admin/Projects';
@@ -50,6 +51,7 @@ function App() {
             <Route path="clients" element={<MyClients />} />
             <Route path="projects" element={<MyProjects />} />
             <Route path="tasks" element={<MyTasks />} />
+            <Route path="my-calendar" element={<MyCalendar />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="documents" element={<Documents />} />
             <Route path="reports" element={<Reports />} />
