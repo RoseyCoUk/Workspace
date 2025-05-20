@@ -9,7 +9,7 @@ import PasswordVault from './pages/admin/PasswordVault';
 import InternalDocs from './pages/admin/InternalDocs';
 import Tools from './pages/admin/Tools';
 import SOPs from './pages/admin/SOPs';
-import Clients from './pages/admin/Clients';
+import MyClients from './pages/admin/Clients';
 import AllClients from './pages/admin/AllClients';
 import TeamChat from './pages/admin/TeamChat';
 import Reports from './pages/admin/Reports';
@@ -17,6 +17,7 @@ import SharedNotes from './pages/admin/SharedNotes';
 import Calendar from './pages/admin/Calendar';
 import Documents from './pages/admin/Documents';
 import AllProjects from './pages/admin/AllProjects';
+import MyProjects from './pages/admin/Projects';
 
 function App() {
   return (
@@ -45,8 +46,8 @@ function App() {
           <Route path="/admin" element={<MainLayout />}>
             <Route index element={<Navigate to="/admin/dashboard" replace />} />
             <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="clients" element={<Clients />} />
-            <Route path="projects" element={<div>Projects</div>} />
+            <Route path="clients" element={<MyClients />} />
+            <Route path="projects" element={<MyProjects />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="documents" element={<Documents />} />
             <Route path="reports" element={<Reports />} />
