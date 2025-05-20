@@ -20,6 +20,7 @@ import AllProjects from './pages/admin/AllProjects';
 import MyProjects from './pages/admin/Projects';
 import MyTasks from './pages/admin/MyTasks';
 import BrandAssets from './pages/admin/BrandAssets';
+import Legal from './pages/admin/Legal';
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
             <Route path="sops" element={<SOPs />} />
             <Route path="vault" element={<PasswordVault />} />
             <Route path="brand-assets" element={<BrandAssets />} />
+            <Route path="legal" element={<Legal />} />
           </Route>
           
           {/* Fallback redirect */}
