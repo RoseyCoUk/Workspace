@@ -19,6 +19,7 @@ import MyCalendar from './pages/admin/MyCalendar';
 import AllProjects from './pages/admin/AllProjects';
 import MyProjects from './pages/admin/Projects';
 import MyTasks from './pages/admin/MyTasks';
+import BrandAssets from './pages/admin/BrandAssets';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
             <Route path="tools" element={<Tools />} />
             <Route path="sops" element={<SOPs />} />
             <Route path="vault" element={<PasswordVault />} />
+            <Route path="brand-assets" element={<BrandAssets />} />
           </Route>
           
           {/* Fallback redirect */}
