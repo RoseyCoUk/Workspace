@@ -19,6 +19,7 @@ import MyCalendar from './pages/admin/MyCalendar';
 import AllProjects from './pages/admin/AllProjects';
 import MyProjects from './pages/admin/Projects';
 import MyTasks from './pages/admin/MyTasks';
+import AllTasks from './pages/admin/AllTasks';
 import BrandAssets from './pages/admin/BrandAssets';
 import Legal from './pages/admin/Legal';
 import Settings from './pages/admin/Settings';
@@ -59,7 +60,7 @@ function App() {
             <Route path="chat" element={<TeamChat />} />
             <Route path="all-clients" element={<AllClients />} />
             <Route path="all-projects" element={<AllProjects />} />
-            <Route path="all-tasks" element={<div>All Tasks</div>} />
+            <Route path="all-tasks" element={<AllTasks />} />
             <Route path="shared-notes" element={<SharedNotes />} />
             <Route path="internal-docs" element={<InternalDocs />} />
             <Route path="tools" element={<Tools />} />
