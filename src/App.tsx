@@ -18,6 +18,7 @@ import Calendar from './pages/admin/Calendar';
 import Documents from './pages/admin/Documents';
 import AllProjects from './pages/admin/AllProjects';
 import MyProjects from './pages/admin/Projects';
+import MyTasks from './pages/admin/MyTasks';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="clients" element={<MyClients />} />
             <Route path="projects" element={<MyProjects />} />
+            <Route path="tasks" element={<MyTasks />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="documents" element={<Documents />} />
             <Route path="reports" element={<Reports />} />
