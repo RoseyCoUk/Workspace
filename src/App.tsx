@@ -24,6 +24,7 @@ import BrandAssets from './pages/admin/BrandAssets';
 import Legal from './pages/admin/Legal';
 import Settings from './pages/admin/Settings';
 import MyAccount from './pages/admin/MyAccount';
+import ClientMyProjects from './pages/client/MyProjects';
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="dashboard" element={<ClientDashboard />} />
-            <Route path="projects" element={<div>My Projects</div>} />
+            <Route path="projects" element={<ClientMyProjects />} />
             <Route path="tasks" element={<div>Tasks</div>} />
             <Route path="deliverables" element={<div>Deliverables</div>} />
             <Route path="meetings" element={<div>Meetings</div>} />
