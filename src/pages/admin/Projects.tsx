@@ -26,7 +26,7 @@ interface Project {
   description: string;
 }
 
-const Projects: React.FC = () => {
+const MyProjects: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedStatus, setSelectedStatus] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -163,8 +163,8 @@ const Projects: React.FC = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Projects</h1>
-          <p className="text-gray-500 mt-1">Manage and track your active projects</p>
+          <h1 className="text-2xl font-bold text-gray-900">My Projects</h1>
+          <p className="text-gray-500 mt-1">Manage and track your assigned projects</p>
         </div>
         <Button variant="primary" icon={<Plus size={16} />} onClick={() => setIsModalOpen(true)}>
           New Project
@@ -303,7 +303,7 @@ const Projects: React.FC = () => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-500">Total Projects</p>
+                <p className="text-sm text-gray-500">My Projects</p>
                 <h3 className="text-2xl font-semibold mt-1">{projects.length}</h3>
               </div>
               <div className="p-3 bg-blue-100 rounded-full text-blue-600">
@@ -361,7 +361,7 @@ const Projects: React.FC = () => {
       {/* Projects List */}
       <Card>
         <CardHeader 
-          title="Projects" 
+          title="My Projects" 
           action={
             <div className="flex items-center gap-3">
               <div className="relative">
@@ -494,4 +494,4 @@ const Projects: React.FC = () => {
   );
 };
 
-export default Projects;
+export default MyProjects;

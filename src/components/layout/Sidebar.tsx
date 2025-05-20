@@ -85,7 +85,7 @@ const Sidebar: React.FC = () => {
               <SidebarLink
                 to="/admin/projects"
                 icon={<FolderKanban size={18} />}
-                label="Projects"
+                label="My Projects"
                 active={location.pathname === '/admin/projects'}
               />
               <SidebarLink
