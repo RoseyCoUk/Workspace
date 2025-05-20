@@ -100,18 +100,6 @@ const Sidebar: React.FC = () => {
                 label="My Calendar"
                 active={location.pathname === '/admin/my-calendar'}
               />
-              <SidebarLink
-                to="/admin/reports"
-                icon={<BarChart size={18} />}
-                label="Reports"
-                active={location.pathname === '/admin/reports'}
-              />
-              <SidebarLink
-                to="/admin/chat"
-                icon={<MessageSquare size={18} />}
-                label="Team Chat"
-                active={location.pathname === '/admin/chat'}
-              />
             </SidebarSection>
 
             <SidebarSection title="TEAM SPACE">
@@ -138,6 +126,18 @@ const Sidebar: React.FC = () => {
                 icon={<Calendar size={18} />}
                 label="Team Calendar"
                 active={location.pathname === '/admin/calendar'}
+              />
+              <SidebarLink
+                to="/admin/reports"
+                icon={<BarChart size={18} />}
+                label="Reports"
+                active={location.pathname === '/admin/reports'}
+              />
+              <SidebarLink
+                to="/admin/chat"
+                icon={<MessageSquare size={18} />}
+                label="Team Chat"
+                active={location.pathname === '/admin/chat'}
               />
               <SidebarLink
                 to="/admin/shared-notes"
