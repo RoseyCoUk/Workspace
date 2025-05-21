@@ -1,0 +1,26 @@
+# Dependency folders
+node_modules
+
+# Build artifacts
+dist
+.next
+build
+
+# Supabase migration history
+supabase/migrations
+
+# Sensitive or unnecessary files
+.env
+*.log
+*.lock
+*.sqlite
+
+# Media-heavy directories
+public/uploads
+public/images
+public/videos
+
+# System and editor junk
+.DS_Store
+.vscode
+.idea
